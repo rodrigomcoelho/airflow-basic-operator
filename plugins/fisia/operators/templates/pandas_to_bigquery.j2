@@ -1,0 +1,23 @@
+import pandas as pd
+
+class NoOutputDataframeException(Exception):
+    ...
+
+def get_dataframe() -> pd.DataFrame:
+    #source code
+    {{ sourceCode | indent(4, first=False) }}
+
+    return __df_output__
+
+
+def write_bigquery():
+    df = get_dataframe()
+
+    if not df:
+        raise NoOutputDataframeException("Nenhum conteúdo encontrado para __df_output__")
+
+    df.to_gbq(
+        destination_table="{{ destinationTable }}",
+        chunksize={{ chunksize }} or None,
+        location="{{ location }}",
+    )
