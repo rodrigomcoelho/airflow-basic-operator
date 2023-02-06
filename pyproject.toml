@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "rerun"
+version = "0.1.0"
+description = ""
+authors = ["Rodrigo Coelho <rodrigo.coelho@gruposbf.com.br>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+apache-airflow = "2.3.4"
+black = "^23.1.0"
+pandas = "^1.5.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
