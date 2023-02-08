@@ -1,0 +1,41 @@
+import pandas as pd
+from sys import exit
+from logging import getLogger
+
+log = getLogger()
+
+
+class NoOutputDataframeException(Exception):
+    ...
+
+
+def get_dataframe() -> pd.DataFrame:
+    # source code
+    {{sourceCode | indent(4, first=False)}}
+
+    return __df_output__
+
+
+def write_bigquery():
+    df = get_dataframe()
+
+    if df.dropna().empty:
+        log.error("Nenhum conteúdo encontrado para __df_output__")
+        exit(99)
+
+    log.info("Executando method bigquery")
+
+    df.to_gbq(
+        destination_table="{{ destinationTable }}",
+        chunksize={{ chunksize }} or None,
+        location="{{ location }}",
+        if_exists="{{ writeMode }}",
+        project_id="{{ projectId }}",
+    )
+
+    log.info("Tabela '{{ destinationTable }}' atualizada com sucesso.")
+
+
+if __name__ == "__main__":
+    write_bigquery()
+    exit(0)
