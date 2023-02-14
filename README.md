@@ -4,6 +4,7 @@
 - [x] Adicionar operador;
 - [x] Adicionar template;
 - [x] Criar função para ler conteúdo de arquivos;
-- [ ] Adicionar processo renderizador de template;
-- [ ] Adicionar arquivo aos temporários;
-- [ ] Executar o arquivo e gravar no BigQuery;
+- [x] Adicionar processo renderizador de template;
+- [x] Adicionar arquivo aos temporários;
+- [x] Adicionar validador de tabela;
+- [x] Executar o arquivo e gravar no BigQuery;
