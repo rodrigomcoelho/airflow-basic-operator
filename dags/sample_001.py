@@ -23,7 +23,8 @@ with DAG(
     jobs["execute"] = PandasToBigQueryOperator(
         task_id="execute",
         source_code_path=join(dirname(__file__), "dataframe", "mycode.py"),
-        destination_table="refined.fis_ref_gld_dim_data",
+        destination_table="fis_ref_gld_dim_data",
+        destination_dataset="refined",
         location="US",
         project_id="PROJETO AQUI",
         write_mode="replace",
