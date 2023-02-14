@@ -1,6 +1,7 @@
-import pandas as pd
-from sys import exit
 from logging import getLogger
+from sys import exit
+
+import pandas as pd
 
 log = getLogger()
 
@@ -11,7 +12,7 @@ class NoOutputDataframeException(Exception):
 
 def get_dataframe() -> pd.DataFrame:
     # source code
-    {{sourceCode | indent(4, first=False)}}
+    {{ sourceCode | indent(4, first=False) }}
 
     return __df_output__
 
@@ -25,15 +26,22 @@ def write_bigquery():
 
     log.info("Executando method bigquery")
 
+    table_fields: dict = {{ tableSchema }}
+    table_schema = [
+        {"name": field.get("name"), "type": field.get("type")}
+        for field in table_fields.get("fields", [])
+    ]
+
     df.to_gbq(
-        destination_table="{{ destinationTable }}",
+        destination_table="{{ dataset }}.{{ destinationTable }}",
         chunksize={{ chunksize }} or None,
         location="{{ location }}",
         if_exists="{{ writeMode }}",
         project_id="{{ projectId }}",
+        table_schema=table_schema,
     )
 
-    log.info("Tabela '{{ destinationTable }}' atualizada com sucesso.")
+    log.info("Tabela '{{ dataset }}.{{ destinationTable }}' atualizada com sucesso.")
 
 
 if __name__ == "__main__":
