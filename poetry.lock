@@ -395,14 +395,14 @@ files = [
 
 [[package]]
 name = "apache-airflow-providers-google"
-version = "8.9.0"
+version = "8.10.0"
 description = "Provider for Apache Airflow. Implements apache-airflow-providers-google package"
 category = "main"
 optional = false
 python-versions = "~=3.7"
 files = [
-    {file = "apache-airflow-providers-google-8.9.0.tar.gz", hash = "sha256:8fd5f8a9c2a5880f337f3f5cc26f9e29e70c52da109659ab57472a7e99982903"},
-    {file = "apache_airflow_providers_google-8.9.0-py3-none-any.whl", hash = "sha256:2a8bafdcea603e5d4a7e3e5a2dfd8cbeb3e042c4fa7e5d7c410f095a9c612df1"},
+    {file = "apache-airflow-providers-google-8.10.0.tar.gz", hash = "sha256:f0764dd59dcbac038e2b0042acea1c6f267d2e75801e079b7b2c9ac0f4698559"},
+    {file = "apache_airflow_providers_google-8.10.0-py3-none-any.whl", hash = "sha256:83a1ed3c191eb1556a47a1c6aa07b3dd5b594273ec3a024fdfd7f852322acd2d"},
 ]
 
 [package.dependencies]
@@ -4781,4 +4781,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.10"
-content-hash = "549bf4404eb691b9f47b81c0df0eb5b6353b43ba4f7b987e41a0aaa6b172f6c8"
+content-hash = "229dfd4a66df0f3372d4825025bd91b103c3c075fa3b3c3f1822b2d4aa90fd65"
