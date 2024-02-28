@@ -7,7 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "3.10.6"
-apache-airflow = "2.7.3"
+apache-airflow = "2.8.1"
 black = "^23.1.0"
 pandas = "^1.5.3"
 autoflake = "^2.0.1"
