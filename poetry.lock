@@ -413,14 +413,20 @@ pandas = ["pandas (>=0.17.1)"]
 
 [[package]]
 name = "apache-airflow-providers-ftp"
-version = "3.3.0"
-description = "Provider for Apache Airflow. Implements apache-airflow-providers-ftp package"
+version = "3.7.0"
+description = "Provider package apache-airflow-providers-ftp for Apache Airflow"
 optional = false
-python-versions = "~=3.7"
+python-versions = "~=3.8"
 files = [
-    {file = "apache-airflow-providers-ftp-3.3.0.tar.gz", hash = "sha256:e3bd8b3a862da56e37d1dfbb93c3d30e75c380ad4c2e825c2c51b1c55c2d6ded"},
-    {file = "apache_airflow_providers_ftp-3.3.0-py3-none-any.whl", hash = "sha256:f99864631b02c8c56caee9a52d0862571b44540b98e1d0a9c8e89a28b9c63467"},
+    {file = "apache_airflow_providers_ftp-3.7.0-py3-none-any.whl", hash = "sha256:817936fa2f9f5d7f00f50bfe0dfdf83a3ffbcd863cb92b862a2ab5a40da1b8c4"},
+    {file = "apache_airflow_providers_ftp-3.7.0.tar.gz", hash = "sha256:cc6e7602fb9b92255b83343673923339c8fe7d22c8c738ba372ce38a70cce1cc"},
 ]
+
+[package.dependencies]
+apache-airflow = ">=2.6.0"
+
+[package.extras]
+openlineage = ["apache-airflow-providers-openlineage"]
 
 [[package]]
 name = "apache-airflow-providers-google"
